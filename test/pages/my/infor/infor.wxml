@@ -1,0 +1,25 @@
+<!--pages/my/infor/infor.wxml-->
+<view class='all'>
+  <view class='block' wx:if="{{!hasUserInfo}}">请返回登录</view>
+
+  <view class='block' style='border-bottom: 1px solid white;'>
+    <view>nickName</view>
+    <view>{{userInfo.nickName}}</view>
+  </view>
+
+  <view class='block' style='border-bottom: 1px solid white;'>
+    <view>openid</view>
+    <view>{{openid}}</view>
+  </view>
+
+  <view class='block' style='border-bottom: 1px solid white;'>
+    <view>country</view>
+    <view>{{userInfo.country}}</view>
+  </view>
+
+  <view class='block'>
+    <view>province</view>
+    <view>{{userInfo.province}}</view>
+  </view>
+  
+</view>

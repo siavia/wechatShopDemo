@@ -1,0 +1,72 @@
+<!--index.wxml
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text>{{userInfo.country}}</text>
+      <text>{{openid}}</text>
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+      <button id="shareBtn" open-type="share" type="primary">
+        分享
+      </button>
+      <text>{{encryptedData.phoneNumber}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+-->
+
+
+<!--pages/shop/shop.wxml-->
+<view class='all'>
+  <!--<view wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style='background-color:#8992c8; color:white;'> 登录 </view>-->
+  <button class='loginButton' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+  <block wx:else>
+    <text class='color:#555;font-size:32rpx;'>{{userInfo.nickName}}，欢迎您~</text>
+  </block>
+  <!--<button id="shareBtn" open-type="share" type="primary">分享</button>-->
+  <!-- 搜索部分 -->
+  <view class='search'>
+    <view class='searchLayout'>
+      <view class='searchLayoutItem' style='padding-left=15px'>
+        <input placeholder='输入搜索关键词' bindconfirm='search' confirm-type='search' style='padding-left:15px;width:220px;'></input>
+      </view>
+      <view class='searchLayoutItem'>
+        <image src='../../image/icon/sousuo.png' bindtap='search' style='width: 50rpx; height: 50rpx; margin: 30rpx;'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 轮播图部分  -->
+  <view class="banner">
+    <swiper indicator-dots="true" autoplay="true" indicator-color="rgba(228,228,228,1)" indicator-active-color = "#82529d" circular='true'>
+        <block wx:for="{{swiperPicUrl}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" style='width=100%; height=100%'/>
+            </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <!-- 精选列表 -->
+  <view class="goods">
+        <view class="title">今日精选</view>
+        <navigator url='../detail/detail?id={{item.id}}&oldPrice={{item.oldPrice}}&newPrice={{item.newPrice}}&title={{item.title}}' wx:for="{{goodsList}}" wx:key="{{index}}">
+            <view class="goodsList">
+                <image class="goodsPic" src='{{item.imgUrl}}' bindtap='goToDetail'></image>
+                <view class="goodsInfo">
+                    <view class="goodsTitle ellipsis2">{{item.title}}</view>
+                    <view class="price">
+                        <text class="fl newPrice">￥{{item.newPrice}}</text>
+                        <text class="fl oldPrice">￥{{item.oldPrice}}</text>
+                        <view class='shopCar'>
+                            <image class="fr car1" src='../../image/icon/gouwuche.png' bindtap='showCar' data-id="{{item.id}}"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>

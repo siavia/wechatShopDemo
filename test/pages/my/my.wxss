@@ -1,0 +1,143 @@
+/* pages/my/my.wxss */
+page{
+  width:100%;
+  height: 100%;
+}
+
+.my{
+  background: rgb(245, 245, 245);
+  width:100%;
+  height: 100%;
+}
+
+.loginButton{
+  font-size:34rpx;
+  background-color:#b8bfe4;
+  color: white;
+  width: 100%;
+  height: 50rpx;
+  line-height: 1.5;
+}
+
+.user{
+   /*弹性模型*/
+    display:flex;
+    /*垂直方向 列方向 排布*/
+    flex-direction:column;
+    /*居中*/
+    align-items:center;
+    /*要从整体解决排布的问题是最好的方案*/ 
+    width: 100%;
+    height: 400rpx;
+    background: #8992c8;
+}
+
+.items{
+  margin-top: 30rpx;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*in user*/
+.headPic{
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border:3px solid #FFFFFF;
+}
+.firstfontstyle{
+ font-size:34rpx;
+ color: #FFFFFF;
+}
+.secondlayout{
+   width: 550rpx;
+   height: 50rpx;
+   /*弹性模型*/
+    display:flex;
+    flex-direction: row;
+    /*居中*/
+   /*align-items:center;*/
+   justify-content:center;
+   margin-top: 25rpx;
+}
+.secondlayoutitem{
+    width: 50%;
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+}
+
+
+
+/*in items*/
+.item{
+  background: #fff;
+  height:100rpx;
+  margin-top:20rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.item-title{
+  flex-grow: 4;
+  margin-left: 20rpx;
+}
+.secondimagestyle{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 30rpx;
+}
+.thirdimagestyle{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx;
+}
+
+
+
+
+/*mackPic*/
+.bg { /*放在后面的黑色那一层*/
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.7;
+  opacity: 0.70;
+  filter: alpha(opacity=70);
+}
+.show {
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  width: 80%;
+  height: 90%;
+  z-index: 1002; /*z-index属性:较大 number 值的对象会覆盖在较小 number 值的对象之上*/
+}
+.contain {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.save{
+  z-index: 1003;
+  margin: 5px;
+}
+
+
+/*
+image {
+  width: 100%;
+  height: 75%;
+}
+
+*/

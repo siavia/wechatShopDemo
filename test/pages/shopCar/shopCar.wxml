@@ -1,0 +1,4 @@
+<!--pages/shopCar/shopCar.wxml-->
+<view class='container'>
+  <text>因为贫穷，所以没购物车哦</text>
+</view>

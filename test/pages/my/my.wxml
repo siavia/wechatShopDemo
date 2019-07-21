@@ -1,0 +1,71 @@
+<!--pages/my/my.wxml-->
+<view class='my'>
+  <view class='user'>
+    <image src="{{userInfo.avatarUrl}}" class='headPic'></image>
+    <view class='firstfontstyle'>{{userInfo.nickName}}</view>
+    <view class='secondlayout'>
+      <button class='loginButton' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+      <block wx:else>
+        <view class='secondlayoutitem'>
+          <view class='firstfontstyle'>积分：</view>
+          <view class='firstfontstyle'>{{score}}</view>
+        </view>
+        <!--<view class='lineview'></view>-->
+        <view class='secondlayoutitem'>
+          <view class='firstfontstyle'>余额：</view>
+          <view class='firstfontstyle'>{{money}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+
+  <view class='items'>
+    <navigator url='../my/infor/infor'>
+      <view class='item'>
+        <image class='secondimagestyle' src='/image/icon/wode.png'></image>
+        <view class=' item-title'>基本信息</view>
+        <image src='/image/icon/fanhui.png' class='thirdimagestyle'></image>
+      </view>
+    </navigator>
+    
+    <view class='item' bindtap='map'>
+      <image class='secondimagestyle' src='/image/icon/dizhi.png'></image>
+      <view class=' item-title'>我的地址</view>
+      <image src='/image/icon/fanhui.png' class='thirdimagestyle'></image>
+    </view>
+
+    <view class='item'>
+      <image class='secondimagestyle' src='/image/icon/dingdan.png'></image>
+      <view class=' item-title'>我的订单</view>
+      <image src='/image/icon/fanhui.png' class='thirdimagestyle'></image>
+    </view>
+
+    <view class='item' bindtap="picShare">
+      <image class='secondimagestyle' src='/image/icon/fenxiang.png'></image>
+      <view class=' item-title'>分享推荐</view>
+      <image src='/image/icon/fanhui.png' class='thirdimagestyle'></image>
+    </view>
+
+    <navigator url='../logs/logs'>
+      <view class='item'>
+        <image class='secondimagestyle' src='/image/icon/shoucang.png'></image>
+        <view class='item-title'>登录记录</view>
+        <image src='/image/icon/fanhui.png' class='thirdimagestyle'></image>
+      </view>
+    </navigator>
+  </view>
+</view>
+
+
+<view class="bg" bindtap='hideView' style='display:{{display}}'></view>
+<view class='show' bindtap='hideView' style='display:{{display}}'>
+  <view class='contain'>
+    <view>
+      <canvas canvas-id="myCanvas" style="width:100%;height:370px;"></canvas>
+    </view>
+    <view>
+      <button class='save' bindtap='save'>保存图片并分享</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,146 @@
+/**index.wxss
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 80px;
+}
+**/
+
+/* pages/shop/shop.wxss */
+.all {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dae0ff;
+} 
+
+.loginButton{
+  font-size:32rpx;
+  background-color:#b8bfe4;
+  color: white;
+  width: 90%;
+  border: 1px solid white;
+}
+
+.search{
+  margin: 2px;
+  background-color: #f7dff5;
+  width:90%;
+  border-radius:5px 5px 5px 5px;
+}
+
+.banner{
+  width: 90%;
+  height: 150px;
+  margin: 5px;
+}
+
+.goods{
+  width: 90%;
+  margin: 5px;
+}
+
+/*in search*/
+.searchLayout{
+  margin: 5px;
+  height: 20px;
+  align-items: center;
+  /*弹性模型使得成为一行*/
+  display:flex;
+  flex-direction: row;
+}
+.searchLayoutItem{
+  /*弹性模型使得成为一行*/
+  display: flex;
+  flex-direction: row;
+}
+
+
+/*in goods*/
+.title {
+    margin: 20rpx 0;
+    border-bottom: 1px solid white;
+    padding-bottom: 10rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.goodsList {
+    padding: 20rpx;
+    border-bottom: 1px solid #d8d8d8;
+    display: -webkit-flex;
+    display: flex;
+    background-color:white;
+}
+
+.goodsList:last-child {
+    border-bottom: none;
+}
+
+.goodsList .goodsPic {
+    width: 180rpx;
+    height: 180rpx;
+    border: 1px solid #d8d8d8;
+}
+
+.goodsInfo {
+    padding: 0 20rpx;
+    position: relative;
+    flex: 1;
+}
+
+.goodsTitle {
+    font-size: 32rpx;
+    font-family: '微软雅黑';
+}
+
+.price {
+    position: absolute;
+    left: 20rpx;
+    bottom: 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end;
+}
+
+.price .newPrice {
+    font-size: 36rpx;
+    margin-top: 10rpx;
+    margin-right: 10rpx;
+}
+
+.price .oldPrice {
+    text-decoration: line-through;
+    color: #d8d8d8;
+    font-size: 28rpx;
+    margin-top: 20rpx;
+    align-items: -webkit-flex-end;
+}
+.car1 {
+    width: 56rpx;
+    height: 56rpx;
+    background: #f7dff5;
+    border-radius: 50%;
+    float: right;
+}
+
+.shopCar{
+  float: right;
+}

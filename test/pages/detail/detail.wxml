@@ -1,0 +1,64 @@
+<!--pages/detail/detail.wxml-->
+<view class='all'>
+  <!-- 轮播图部分  -->
+  <view class="banner">
+    <swiper indicator-dots="true" autoplay="true" indicator-color="rgba(228,228,228,1)" indicator-active-color = "#82529d" circular='true' style="height:240px;">
+        <block wx:for="{{swiperPicUrl}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" style='width=100%; height=100%'/>
+            </swiper-item>
+        </block>
+    </swiper>
+  </view>
+
+  <!-- 商品简介部分  -->
+  <view class='infor'>
+    <view class='fistFontStyle'>{{title}}</view>
+    <view style='display:flex; align-items:center'>
+      <view class='price'>￥{{newPrice}}</view>
+      <view class='secondFontStyle' style='text-decoration:line-through'>￥{{oldPrice}}</view>
+    </view>
+  </view>
+
+  <view class='num'>
+      <view class='secondFontStyle' style='padding-right:60px;'>销量 999</view>
+      <view class='secondFontStyle'>库存 888</view>
+  </view>
+
+  <!-- 商品图文部分  -->
+  <view class='detail'>
+    <view class='fistFontStyle' style='padding-bottom:10px; border-bottom: 1px solid #d8d8d8;'>商品介绍</view>
+    <block wx:for="{{swiperPicUrl}}" wx:key='{{index}}'>
+      <image src='{{item}}' style='width:100%;'></image>
+    </block>
+  </view>
+
+  <!-- 固定下栏  -->
+  <view class='footer'>
+    <view class='inline' style='align-items:center;'>
+      <view class='left'>
+        <view class='inline'>
+          <image class='icon' src='../../image/icon/fenxiang.png'/>
+          <image class='icon' src='../../image/icon/shoucang.png'/>
+          <image class='icon' src='../../image/icon/gouwuche.png'/>
+        </view>
+        <view class='inline'>
+          <view class='smallFontStyle'>分享</view>
+          <view class='smallFontStyle'>收藏</view>
+          <view class='smallFontStyle'>购物车</view>
+        </view>
+      </view>
+      <view class='right'>
+        <view class='inline'>
+          <view class='buttomm'><text>加入购物车</text></view>
+          <view class='buttomm'><text>立即购买</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>
+
+
